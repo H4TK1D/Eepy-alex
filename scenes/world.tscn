@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://da52rsv5q4xqx"]
+
+[ext_resource type="Texture2D" uid="uid://de7xyj2qk6rck" path="res://textures/Dan børgensen.png" id="1_mt3pt"]
+[ext_resource type="PackedScene" uid="uid://b5y2hn22mgyem" path="res://scenes/player.tscn" id="2_b8cu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbgf7"]
+size = Vector2(376.332, 346.195)
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(574, 593)
+scale = Vector2(3.01596, 0.262857)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.165756, 1.90259)
+shape = SubResource("RectangleShape2D_dbgf7")
+
+[node name="DanBørgensen" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.98941, 0)
+scale = Vector2(1.10229, 1)
+texture = ExtResource("1_mt3pt")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_b8cu7")]
+position = Vector2(167, 292)
