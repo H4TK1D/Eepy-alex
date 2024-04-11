@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6vmbie06u605"
-path="res://.godot/imported/Background_2.png-0f2a9d95c9bb9a7a964e89b7065d0cfd.ctex"
+uid="uid://5gp4xauinv07"
+path="res://.godot/imported/full jump animation_3.png-da07bdd12f2dd34cf04d6306c9bf7bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSets/Background_2.png"
-dest_files=["res://.godot/imported/Background_2.png-0f2a9d95c9bb9a7a964e89b7065d0cfd.ctex"]
+source_file="res://textures/Player/Character/sprites/jump/full jump animation_3.png"
+dest_files=["res://.godot/imported/full jump animation_3.png-da07bdd12f2dd34cf04d6306c9bf7bba.ctex"]
 
 [params]
 
