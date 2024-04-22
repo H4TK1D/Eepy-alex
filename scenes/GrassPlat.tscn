@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://da52rsv5q4xqx"]
+[gd_scene load_steps=5 format=3 uid="uid://da52rsv5q4xqx"]
 
 [ext_resource type="TileSet" uid="uid://btg0vf472cvnk" path="res://TileSets/TileSet.tres" id="1_5is5i"]
 [ext_resource type="PackedScene" uid="uid://b5y2hn22mgyem" path="res://scenes/player.tscn" id="2_blbq1"]
+[ext_resource type="Texture2D" uid="uid://6vmbie06u605" path="res://textures/TileSets/Grassy/Background_2.png" id="3_n1w3h"]
+[ext_resource type="Texture2D" uid="uid://cixshqeqmhgds" path="res://textures/TileSets/Grassy/Background_1.png" id="3_rvwma"]
 
-[node name="World" type="Node2D"]
+[node name="GrassPlat" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -18,3 +20,23 @@ layer_0/tile_data = PackedInt32Array(1245184, 196608, 11, 1310720, 196608, 11, 1
 [node name="CharacterBody2D" parent="CanvasLayer" instance=ExtResource("2_blbq1")]
 texture_filter = 1
 position = Vector2(241, 191)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(496, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(247.5, 181)
+scale = Vector2(1.00202, 1.33088)
+texture = ExtResource("3_n1w3h")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(496, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(247.5, 181)
+scale = Vector2(1.00202, 1.33088)
+texture = ExtResource("3_rvwma")
