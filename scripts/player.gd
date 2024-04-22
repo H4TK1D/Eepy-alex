@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 150
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -300.0
 var ScreenSize;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -27,6 +27,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction < 0: 
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 		if velocity.y == 0:
 			$AnimatedSprite2D.play("walk")
 		elif velocity.y < 0:
