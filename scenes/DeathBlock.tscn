@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb4u6h3powqaq"]
+
+[ext_resource type="Script" path="res://scripts/DeathBlock.gd" id="1_clexm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76lmd"]
+size = Vector2(82, 23)
+
+[node name="DeathBlock" type="Area2D"]
+script = ExtResource("1_clexm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_76lmd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

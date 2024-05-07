@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://8pmv0sjjg8bg"]
+
+[ext_resource type="TileSet" uid="uid://btg0vf472cvnk" path="res://TileSets/TileSet.tres" id="1_mypjn"]
+[ext_resource type="PackedScene" uid="uid://b5y2hn22mgyem" path="res://scenes/player.tscn" id="2_o3pk3"]
+[ext_resource type="Texture2D" uid="uid://6vmbie06u605" path="res://textures/TileSets/Grassy/Background_2.png" id="3_tuvbg"]
+[ext_resource type="Texture2D" uid="uid://cixshqeqmhgds" path="res://textures/TileSets/Grassy/Background_1.png" id="4_01vdl"]
+[ext_resource type="PackedScene" uid="uid://bb4u6h3powqaq" path="res://scenes/DeathBlock.tscn" id="5_puhgd"]
+[ext_resource type="PackedScene" uid="uid://csbabxhwt7k5a" path="res://scenes/Flag.tscn" id="6_s2fqx"]
+
+[node name="GrassPlat" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer"]
+texture_filter = 1
+tile_set = ExtResource("1_mypjn")
+format = 2
+layer_0/tile_data = PackedInt32Array(851980, 393216, 17, 851981, 458752, 17, 851982, 458752, 17, 851983, 458752, 17, 851984, 458752, 17, 851985, 458752, 17, 851986, 524288, 17, 851987, 589824, 17, 917523, 589824, 18, 983059, 589824, 17, 851988, 655360, 17, 983060, 655360, 17, 917524, 655360, 18, 1048596, 655360, 18, 1048595, 589824, 18)
+
+[node name="player" parent="CanvasLayer" instance=ExtResource("2_o3pk3")]
+texture_filter = 1
+position = Vector2(241, 191)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_offset = Vector2(1931.24, 205.645)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(496, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(247.5, 181)
+scale = Vector2(1.00202, 1.33088)
+texture = ExtResource("3_tuvbg")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(496, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(247.5, 181)
+scale = Vector2(1.00202, 1.33088)
+texture = ExtResource("4_01vdl")
+
+[node name="DeathBlock" parent="." instance=ExtResource("5_puhgd")]
+position = Vector2(526, 376)
+scale = Vector2(20, 2)
+
+[node name="Flag" parent="." instance=ExtResource("6_s2fqx")]
+position = Vector2(514, 266)
+scale = Vector2(2, 2)

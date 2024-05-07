@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://csbabxhwt7k5a"]
+
+[ext_resource type="Script" path="res://scripts/Flag.gd" id="1_432br"]
+[ext_resource type="Texture2D" uid="uid://csxatl736o8gc" path="res://textures/flag/flag animation_2.png" id="2_1hia2"]
+[ext_resource type="Texture2D" uid="uid://38ri4yxqdblv" path="res://textures/flag/flag animation_4.png" id="3_ssmvl"]
+[ext_resource type="Texture2D" uid="uid://cdhe6bcfk44e0" path="res://textures/flag/flag animation_6.png" id="4_dk1vt"]
+[ext_resource type="Texture2D" uid="uid://cjskxudoqsgoi" path="res://textures/flag/flag animation_8.png" id="5_grlfc"]
+[ext_resource type="Texture2D" uid="uid://cwboj1lolqif2" path="res://textures/flag/flag animation_10.png" id="6_ymuxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwt0y"]
+size = Vector2(10, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csnd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1hia2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ssmvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dk1vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_grlfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ymuxs")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 6.0
+}]
+
+[node name="Flag" type="Area2D"]
+script = ExtResource("1_432br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_bwt0y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_csnd6")
+animation = &"wave"
+frame = 4
+frame_progress = 0.150855
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
