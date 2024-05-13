@@ -8,5 +8,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "player":
-		get_tree().change_scene_to_packed(nextlevel)
+		SceneSwitcher.switch_scene(nextlevel)
+	
 		#LoadNextScene
