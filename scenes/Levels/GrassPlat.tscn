@@ -48,6 +48,7 @@ texture = ExtResource("3_rvwma")
 [node name="DeathBlock" parent="." instance=ExtResource("5_kk7fg")]
 position = Vector2(526, 376)
 scale = Vector2(20, 2)
+playerx = 241
 
 [node name="Flag" parent="." instance=ExtResource("6_p33yh")]
 position = Vector2(964, 235)

@@ -1,8 +1,8 @@
 extends Area2D
 
-const playerx = 241
-const playery = 191
-# Called when the node enters the scene tree for the first time.
+@export var playerx = 0
+@export var playery = 0
+
 func _ready():
 	monitoring = true
 
